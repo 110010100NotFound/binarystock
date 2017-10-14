@@ -1,3 +1,19 @@
+.main-button-href{
+	color:#2b3340;
+}
+
+.main-button{
+	margin-top:3%;
+	margin-bottom:5%;
+	border:1px solid #2b3340;
+	padding:1%;
+	background:transparent;
+}
+.main-button:hover{
+	background:#2b3340;
+	color:white;
+}
+
 .list-section{
 	margin-left:15%;
 	margin-top:-5%;
