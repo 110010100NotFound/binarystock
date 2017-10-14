@@ -601,10 +601,20 @@ ul.cd-hero-slider {
 
 .fact-item span {
 	display: inline-block;
+	text-align:left;
 	margin-top: 10px;
 	font-style: 10px;
 	letter-spacing: 0.5px;
 	color: #7a7a7a;
+	margin-bottom:5%;
+}
+
+.counter-key{
+	font-weight:700 !important;
+	width:100%;
+}
+.counter-value{
+	font-weight:500 !important;
 }
 
 

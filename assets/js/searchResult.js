@@ -22,33 +22,63 @@ $(document).ready(function(){
         myChart.update();
 
         var el = Object.keys(data.growthScores).map(function(keys){
-            return ("<span>"+data.growthScores[keys].name+" : "+parseFloat(data.growthScores[keys].score).toPrecision(3)+"</span>");
+            return ("<span>\
+                <label class='counter-key'>"+data.growthScores[keys].name+" :</label>\
+                <label class='counter-value'>"+parseFloat(data.growthScores[keys].score).toPrecision(3)+"</label>\
+            </span>");
         })
-        el.unshift("<span>Average : "+scoresList[0].toPrecision(3)+"</span");
+        el.unshift("<span>\
+            <label class='counter-key'>Average :</label>\
+            <label class='counter-value'>"+scoresList[0].toPrecision(3)+"</label>\
+        </span>");
         $("#growth-item").after(el);
 
         el = Object.keys(data.liquidityScores).map(function(keys){
-            return ("<span>"+data.liquidityScores[keys].name+" : "+parseFloat(data.liquidityScores[keys].score).toPrecision(3)+"</span>");
+            return ("<span>\
+                <label class='counter-key'>"+data.liquidityScores[keys].name+" :</label>\
+                <label class='counter-value'>"+parseFloat(data.liquidityScores[keys].score).toPrecision(3)+"</label>\
+            </span>");
         })
-        el.unshift("<span>Average : "+scoresList[1].toPrecision(3)+"</span");
+        el.unshift("<span>\
+            <label class='counter-key'>Average :</label>\
+            <label class='counter-value'>"+scoresList[1].toPrecision(3)+"</label>\
+        </span>");
         $("#liquidity-item").after(el);
 
         el = Object.keys(data.profitabilityScores).map(function(keys){
-            return ("<span>"+data.profitabilityScores[keys].name+" : "+parseFloat(data.profitabilityScores[keys].score).toPrecision(3)+"</span>");
+            return ("<span>\
+                <label class='counter-key'>"+data.profitabilityScores[keys].name+" :</label>\
+                <label class='counter-value'>"+parseFloat(data.profitabilityScores[keys].score).toPrecision(3)+"</label>\
+            </span>");
         })
-        el.unshift("<span>Average : "+scoresList[2].toPrecision(3)+"</span");
+        el.unshift("<span>\
+            <label class='counter-key'>Average :</label>\
+            <label class='counter-value'>"+scoresList[2].toPrecision(3)+"</label>\
+        </span>");
         $("#profitability-item").after(el);
 
         el = Object.keys(data.trendsScore).map(function(keys){
-            return ("<span>"+data.trendsScore[keys].name+" : "+parseFloat(data.trendsScore[keys].score).toPrecision(3)+"</span>");
+            return ("<span>\
+                <label class='counter-key'>"+data.trendsScore[keys].name+" :</label>\
+                <label class='counter-value'>"+parseFloat(data.trendsScore[keys].score).toPrecision(3)+"</label>\
+            </span>");
         })
-        el.unshift("<span>Average : "+scoresList[3].toPrecision(3)+"</span");
+        el.unshift("<span>\
+            <label class='counter-key'>Average :</label>\
+            <label class='counter-value'>"+scoresList[3].toPrecision(3)+"</label>\
+        </span>");
         $("#trend-item").after(el);
 
         el = Object.keys(data.valueScores).map(function(keys){
-            return ("<span>"+data.valueScores[keys].name+" : "+parseFloat(data.valueScores[keys].score).toPrecision(3)+"</span>");
+            return ("<span>\
+                <label class='counter-key'>"+data.valueScores[keys].name+" :</label>\
+                <label class='counter-value'>"+parseFloat(data.valueScores[keys].score).toPrecision(3)+"</label>\
+            </span>");
         })
-        el.unshift("<span>Average : "+scoresList[4].toPrecision(3)+"</span");
+        el.unshift("<span>\
+            <label class='counter-key'>Average :</label>\
+            <label class='counter-value'>"+scoresList[0].toPrecision(4)+"</label>\
+        </span>");
         $("#value-item").after(el);
     });
 
