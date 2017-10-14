@@ -6,13 +6,18 @@
         <title>Binary Stock	</title>
 		<meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>        
+        <script src="/stock.js"></script>
+        <script src="/assets/js/searchResult.js"></script>
+        
+
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="assets/css/fontAwesome.css">
         <link rel="stylesheet" href="assets/css/hero-slider-search.css">
         <link rel="stylesheet" href="assets/css/tooplate-style-search.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
     </head>
 
 <body>
@@ -68,7 +73,8 @@
 			<p class='description'>description 2</p>
 		</div>
 		<div class='pentagon-section'>
-			<img src='assets/img/pentagon.png'/>
+            <!--<img src='assets/img/pentagon.png'/>-->
+            <canvas id="myChart" width="400" height="400"></canvas>
 		</div>
 	</section>
     </footer>

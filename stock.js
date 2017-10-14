@@ -284,7 +284,8 @@ function getAllAttribute(ticker){
 					data["liquidityScores"]=liquidityScores;
 					data["trendsScore"]=trendsScore;
 					calculateAttributeScore(data);
-					console.log(data);
+					//console.log(data);
+					$(document).trigger("getAllAttributes",[data]);
 				},function(message){
 					console.error(message)
 				});
@@ -298,11 +299,5 @@ function getAllAttribute(ticker){
 		});
 	},function(message){
 		console.log(message)
-	})
-
-	
-
-	
-
-	
+	})	
 }
