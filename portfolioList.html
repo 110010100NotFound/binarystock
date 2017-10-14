@@ -12,6 +12,7 @@
 		<script src="/assets/js/cookie.js"></script>
 		<script src="/assets/js/tickersList.js"></script>
 		<script src="/stock.js"></script>
+		<script src="/assets/js/querystring.min.js"></script>
         <script src="/assets/js/portfolioList.js"></script>
 		
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -77,7 +78,7 @@
 	</section>
   
 	<div id="survey" class="overlay">
-		<div class="popup">
+		<form id="survey-form" class="popup">
 			<a class="close" href="#">&times;</a>	
 			<h3> Survey Form </h3>
 			
@@ -86,8 +87,8 @@
 					<label class='num'> 1 ➝	</label>
 				</div>
 				<div class='question-right'>
-					<label class='question'> Question one inforamtion detail</label>
-					<input class='question-input'> </input>
+					<label class='question'> How much is your invest amount?</label>
+					<input id='survey-amount' required type='number' min='0' step="0.01" class='question-input'> </input>
 				</div>
 			</div>
 			<div class='survey-question'>
@@ -95,18 +96,18 @@
 					<label class='num'> 2 ➝	</label>
 				</div>
 				<div class='question-right'>
-					<label class='question'> Question one inforamtion detail</label>
-					<select class='question-input'> 
-						<option> option1 </option>
-						<option> option1 </option>
-						<option> option1 </option>
+					<label class='question'> How tolerant are you to risk?</label>
+					<select id='survey-risk' required class='question-input'> 
+						<option value='0'> I prefer least risk </option>
+						<option value='1'> Moderate risk and return </option>
+						<option value='2'> I'm okay as long as the return is high </option>
 					</select>
 				</div>
 			</div>			
 			<center>
-				<a class='main-button-href'  href="portfolio.html" > <button class='main-button-survey'>Confirm </button> </a>
+				<a class='main-button-href'> <input type='submit' class='main-button-survey' value=' Confirm '></input> </a>
 			</center>		
-		</div>
+		</form>
 	</div>	
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>

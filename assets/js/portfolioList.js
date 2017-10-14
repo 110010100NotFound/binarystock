@@ -27,6 +27,21 @@ $(document).ready(function(){
         cookie.set("@binaryStock/Portfolio", 
             JSON.stringify(portfolio));
     }
+
+    $('#survey-form').on('submit',function(e){
+        e.preventDefault();
+
+        var tickers = portfolio.map(function(o){
+            return o.ticker;
+        });
+        var data = {
+            amount:$('#survey-amount').val(),
+            risk:$('#survey-risk').val(),
+            tickers:tickers
+        }
+        var qs = querystring.stringify(data);
+        window.location.href = "/portfolio.html?"+qs;
+    });
 });
 
 var portfolio =[];
