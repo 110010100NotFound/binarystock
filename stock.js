@@ -89,7 +89,24 @@ function getIncreaseRateOfProfit(result){
 }
 
 function getROA(result){
-	console.log("ROA is: "+result.returnOnAssets);
+	var roaScore;
+	var roa=result.returnOnAssets
+
+	if (roa>12){
+		roaScore=5
+	}
+	else if (roa<0){
+		roaScore=0
+	}
+	else{
+		roaScore=roa*25/3/20
+	}
+	var returnRoa={
+		score:roaScore,
+		data:roa,
+		name:"ROA"
+	}
+	return returnRoa
 }
 
 
@@ -216,14 +233,14 @@ function getCashFlowCoverageRatio(result){
 function getShortRatio(result){
 	var shortInterestRatio=result.shortRatio;
 	var shortInterestRatioScore;
-	if (shortInterestRatio>2){
-		shortInterestRatioScore=5
-	}
-	else if (shortInterestRatio<1){
+	if (shortInterestRatio>5){
 		shortInterestRatioScore=0
 	}
+	else if (shortInterestRatio<0){
+		shortInterestRatioScore=5
+	}
 	else {
-		shortInterestRatioScore=(shortInterestRatio-1)*5
+		shortInterestRatioScore=5-(shortInterestRatio-1)
 	}
 	var returnShortInterestRatio={
 		data:shortInterestRatio,
@@ -247,20 +264,52 @@ function calculateAttributeScore(data){
 		}
 		scoreList[dataKey[b]]=currentAttributeScore/currentScore.length;
 	}
-	scoreList["profitabilityScores"]=0;
 	data["scoreList"]=scoreList;
 }
 
+function getEpsGrowth(result){
+	var quarter1=result.earnings[3].actualEPS;
+	var quarter2=result.earnings[2].actualEPS;
+	var quarter3=result.earnings[1].actualEPS;
+	var quarter4=result.earnings[0].actualEPS;
 
+	var increment1=(quarter3-quarter4)/quarter4;
+	var increment2=(quarter2-quarter3)/quarter3;
+	var increment3=(quarter1-quarter2)/quarter2;
+
+	var epsGrowth=(increment1+increment2+increment3)/3*100
+	var epsGrowthScore;
+
+	if (epsGrowth>20){
+		epsGrowthScore=5
+	}
+	else if(epsGrowth<0){
+		epsGrowthScore=0
+	}
+	else{
+		epsGrowthScore=epsGrowth/4
+	}
+	if (epsGrowth==Infinity){
+		epsGrowth=0;
+	}
+	var returnEpsGrowth={
+		data:epsGrowth,
+		score:epsGrowthScore,
+		name:"EPS growth rate"
+	}
+	return returnEpsGrowth
+}
 
 function getAllAttribute(ticker){
 	var data={};
 	var valueScores={};
 	var growthScores={};
 	var liquidityScores={};
-	var trendsScore={}
+	var trendsScore={};
+	var profitabilityScores={};
+
 	getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/financials",function(result){
-		growthScores["roeScore"]=getROE(result);
+		profitabilityScores["roeScore"]=getROE(result);
 		liquidityScores["laScore"]=getLA(result);
 		growthScores["increaseRateOfRevenueScore"]=getIncreaseRateOfRevenue(result);
 		liquidityScores["cashFlowCoverageRatioScore"]=getCashFlowCoverageRatio(result)
@@ -270,12 +319,13 @@ function getAllAttribute(ticker){
 		growthScores["netProfitGrowthScore"]=getNetProfitGrowth(result);
 
 		getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/stats",function(result){
-			getROA(result);
+			profitabilityScores["roaScore"]=getROA(result);
 			trendsScore["shortInterestRatio"]=getShortRatio(result);
 			valueScores["pbScore"]=getPB(result);
 
 			getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/earnings",function(result){
 				getEPS(result);
+				growthScores["epsGrowthScore"]=getEpsGrowth(result);
 
 				getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/quote",function(result){
 					valueScores["peScore"]=getPE(result);
@@ -283,6 +333,7 @@ function getAllAttribute(ticker){
 					data["growthScores"]=growthScores;
 					data["liquidityScores"]=liquidityScores;
 					data["trendsScore"]=trendsScore;
+					data["profitabilityScores"]=profitabilityScores;
 					calculateAttributeScore(data);
 					console.log(data);
 				},function(message){
@@ -298,11 +349,5 @@ function getAllAttribute(ticker){
 		});
 	},function(message){
 		console.log(message)
-	})
-
-	
-
-	
-
-	
+	})	
 }
