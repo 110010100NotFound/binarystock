@@ -228,7 +228,8 @@ Single slide style
   background-repeat: no-repeat;
 }
 .first-slide {
-  background-image: url(../img/slide_01.jpg);
+  background-image: url(../img/home-bg.png);
+  background-size: 100vw 120vh !important;
 }
 input::-ms-expand { /* for IE 11 */
     display: none;
