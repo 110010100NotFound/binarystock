@@ -1,20 +1,38 @@
 /*
 
-Template 2089 Meteor
 
-http://www.tooplate.com/view/2089-meteor
 
+.footer-line
+{
+	background-image: url(../img/line-invert.png);
+	width:100%;
+	height:100%;
+	position:relative;
+}
 */
-
+.portfolio-list-title{
+	position: absolute;
+    color: white;
+    bottom: 40%;
+    text-align: center;
+    font-size: 170%;
+	margin: auto;
+    left: 0;
+	text-transform:uppercase;
+    right: 0;
+}
 
 .header-line{
-	background-image: url(../img/line.png);
+	background-image: url(../img/line-full.png);
 	width:100%;
 	height:50vh;
 	margin-top:-2%;
 	position:relative;
 }
 
+body{
+	overflow-x:hidden;
+}
 
 
 * {
@@ -91,7 +109,7 @@ p {
 	margin: 0 auto;
 }
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -121,11 +139,15 @@ p {
 	font-weight: 300;
 	text-transform: uppercase;
 	text-shadow: none;
-	margin-top:30%;
+	margin-top:18%;
 	padding: 0px;
 	padding:9px;
 	
 	letter-spacing: 0.5px;
+}
+.navbar-nav>li>a:hover {
+	color: #2b3340!important;
+	background:white !important;
 }
 
 .navbar-nav>li {
@@ -556,13 +578,14 @@ ul.cd-hero-slider {
 /* FUN FACTS */
 
 #fun-facts {
+	margin-top:2%;
 	padding: 100px 0px;
-	background-color: #fff;
+
 	
 }
 
 #fun-facts .fact-item {
-	background-color: #f4f4f4;
+	background-color: white;
 	padding: 30px;
 	text-align: center;
 }
