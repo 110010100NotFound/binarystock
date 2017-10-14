@@ -94,6 +94,8 @@ $(document).ready(function(){
 
         $("#company-name").text(data.companyProfile["name"]);
         $("#company-desc").text(data.companyProfile["description"]);
+
+        $(".loader").fadeOut();
     });
 
     var myChart = new Chart(ctx, {
