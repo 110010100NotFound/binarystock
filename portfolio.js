@@ -16,8 +16,9 @@ function optimizePortfolio(stockList,amount,riskPreference){
 		"amount":amount
 	}
 	postAjax("http://intuition.windworkshop.my/portfolioOptimization",data,function(result){
-		console.log(result)
+		//console.log(result);
+		$(document).trigger("optimizePortfolio",[data]);
 	},function(message){
-		console.error(message)
+		console.error(message);
 	});
 }

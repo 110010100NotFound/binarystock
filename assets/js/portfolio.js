@@ -7,5 +7,42 @@ $(document).ready(function(){
     $("#search-bar").on("change",function(){
         $("#search-btn").attr("href", "/searchResult.html?ticker="+$("#search-bar").val());
     });
+
+    var query = querystring.parse();
+    if(typeof query["amount"] !== 'undefined' && typeof query["risk"] !== 'undefined'){
+        var tickers = portfolio.map(function(o){
+            return o.ticker;
+        });
+        optimizePortfolio(tickers, query["amount"], query["risk"]);
+    }
     
+    try
+    {
+        portfolio = JSON.parse(cookie.get("@binaryStock/Portfolio"));
+        console.log(portfolio);
+        var el = portfolio.map(function(o,i){
+            return("<li class='list-li'>\
+                <img src='"+o.logo+"' />\
+                <label onClick='removePortfolio("+i+")' class='list-remove'> X </label>\
+                <h3 class='listHead'>"+o.name+"</h3>\
+                <p>"+o.description+"</p>\
+            </li>");
+        })
+       $('#portfolio-list').append(el);
+    }
+    catch(e)
+    {
+        cookie.set("@binaryStock/Portfolio", 
+            JSON.stringify(portfolio));
+    }
+
 });
+
+var portfolio =[];
+
+function removePortfolio(index) {
+    portfolio.splice(index, 1);
+    window.location.reload();
+    cookie.set("@binaryStock/Portfolio", 
+        JSON.stringify(portfolio));
+}

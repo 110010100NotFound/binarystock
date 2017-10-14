@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
     
     var query = querystring.parse();
-    console.log(query);
+    //console.log(query);
 
     if(typeof query["ticker"] !== 'undefined'){
         getAllAttribute(query["ticker"]);

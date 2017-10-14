@@ -5,7 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Binary Stock	</title>
 		<meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>        
+		<script src="/assets/js/cookie.js"></script>
+		<script src="/assets/js/tickersList.js"></script>
+		<script src="/stock.js"></script>
+		<script src="/assets/js/querystring.min.js"></script>
+		<script src="/portfolio.js"></script>
+		<script src="/assets/js/portfolio.js"></script>
+		
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
 		<link href="assets/css/portfolio.css" rel="stylesheet">
@@ -111,37 +121,7 @@
 		
 		<div class='list-section'>
 		<div style='text-align:center' class='title-handle'> <label class='portfolio-list-label'> Portfolio List </label> </div> <br><br><br>
-		  <ul class='list-ul'>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3 class="listHead">Headline</h3>
-			  <p>detail detail shit</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3 class="listHead">Headline</h3>
-			  <p>Ldetail detail shit.</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3 class="listHead">Headline</h3>
-			  <p>detail detail shit</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3 class="listHead">Headline</h3>
-			  <p>detail detail shit </p>
-			  
-			</li>
-									
-			 
+		  <ul id='portfolio-list' class='list-ul'>
 		  </ul>
 		  
 		</div>
