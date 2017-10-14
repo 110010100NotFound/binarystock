@@ -2,9 +2,7 @@ $(document).ready(function(){
     var query = querystring.parse();
     console.log(query);
 
-    if(typeof query["ticker"] !== 'undefined'){
-        getAllAttribute(query["ticker"]);
-    }
+    getAllAttribute("googl");
 
     var ctx = $("#myChart")[0].getContext('2d');
     
