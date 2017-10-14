@@ -5,7 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Binary Stock	</title>
 		<meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>        
+		<script src="/assets/js/cookie.js"></script>
+		<script src="/assets/js/tickersList.js"></script>
+		<script src="/stock.js"></script>
+        <script src="/assets/js/portfolioList.js"></script>
+		
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="assets/css/fontAwesome.css">
@@ -41,13 +49,10 @@
                 <!--/.navbar-collapse-->
             </nav>
 			<div class='search-area'>
-				<input type='text' class='search-field'  placeholder="Search here ... (Ex: ticket ) " list="test"	/ >
-				<datalist id="test">
-					<option value="Pen">Pen</option>
-					<option value="Pencil">Pencil</option>
-					<option value="Paper">Paper</option>
+				<input id="search-bar" type='text' class='search-field'  placeholder="Search here ... (Ex: ticket ) " list="search-data"	/ >
+				<datalist id="search-data">
 				</datalist>
-				<a href="searchResult.html" class="search-button scroll-link" data-id="about">Search</a>															
+				<a id="search-btn" href="searchResult.html" class="search-button scroll-link" data-id="about">Search</a>															
 			</div>
 
             <!--/.navbar-->
@@ -62,34 +67,7 @@
 			<label class='portfolio-list-title'>Portfolio List </label>
 		</div>
 		<div class='list-section'>
-		  <ul class='list-ul'>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3 class="listHead">Headline</h3>
-			  <p>detail detail shit</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3  class="listHead">Headline</h3>
-			  <p>Ldetail detail shit.</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3  class="listHead">Headline</h3>
-			  <p>detail detail shit</p>
-			  
-			</li>
-			<li class='list-li'>
-			  <img src="assets/img/logo_black.png" />
-			  <label class='list-remove'> X </label>
-			  <h3  class="listHead">Headline</h3>
-			  <p>detail detail shit </p>
-			</li>
+		  <ul id="portfolio-list" class='list-ul'>
 		  </ul>
 		  
 		</div>
