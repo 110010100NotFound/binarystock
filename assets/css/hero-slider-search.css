@@ -6,6 +6,8 @@ Primary style
 
 
 .searchResult-title{
+	text-overflow: wrap; 
+	word-wrap: break-word;
 	text-align:center;
 }
 
@@ -34,6 +36,9 @@ hr{
 	 
 }
 .description{
+	margin:auto;
+	width:80%;
+	text-overflow: wrap; 
 	font-weight:500;
 	 font-family: 'Open Sans', arial, sans-serif;
 }
