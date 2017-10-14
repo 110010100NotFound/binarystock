@@ -3,8 +3,35 @@
 Primary style
 
 -------------------------------- */
+
+
+.main-button-href{
+	color:#2b3340;
+	margin-bottom:20%;
+}
+.main-button-survey{
+	margin-top:3%;
+	margin-bottom:0%;
+	border:1px solid #2b3340;
+	padding:2%;
+	background:transparent;
+}
+.main-button{
+	margin-top:3%;
+	margin-bottom:20%;
+	border:1px solid #2b3340;
+	padding:2%;
+	background:transparent;
+}
+.main-button:hover,
+.main-button-survey:hover{
+	background:#2b3340;
+	color:white;
+}
+
+
 .loader{
-	
+
 	position:fixed;
 	width:100vw;
 	height:100vh;
@@ -774,4 +801,40 @@ Javascript disabled
 
 .no-js .cd-slider-nav {
   display: none;
+}
+
+
+
+@media (max-width: 768px){
+	.main-button-survey{
+		margin-top: 10%;
+		width: 90%;
+	}
+	.searchResult-icon-bg{
+	    margin-top: 60%;
+		width: 30%;	
+	}
+	.searchResult-icon{
+		    margin-top: 67%;
+	}
+	.searchResult-title{
+		margin-top:25%;
+	}
+	.description{
+		margin-bottom:15%;
+	}
+	.fact-item span{
+		width: 100%;
+		margin-bottom: 10%;
+		text-align: center !important;
+		margin-bottom:0% !important;
+	}
+	.counter-key{
+		width:auto !important ;
+	}
+	.fact-item .counter
+	{
+		margin-top:20%;
+	}
+	
 }

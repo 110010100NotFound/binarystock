@@ -39,6 +39,9 @@ h3{
 	font-weight:600;
 	padding-bottom:5%;
 }
+.listHead{
+	padding-bottom:0%;
+}
 .survey-line{
 	opacity:0.8;
     border-style: inset;
@@ -175,4 +178,28 @@ h3{
  
 .list-li:hover {
   background: #eee;
+}
+
+
+
+@media (max-width: 768px){
+	.portfolio-list-title{
+		bottom: 10%;
+		color: #14181c;
+	}
+	.list-section{
+		margin-left:0;
+	}
+	.list-ul{
+		width:100%;
+	}
+	.popup{
+		width:100%;
+		position:absolute;
+		margin:0;
+		bottom:0;
+		padding-top:20%;
+		top:0;
+	}
+	
 }

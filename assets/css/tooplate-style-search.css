@@ -1010,6 +1010,13 @@ body.lb-disable-scrolling {
 	.cd-hero .slide-caption h2 {
 		font-size: 28px;
 	}
+	.search-area{
+		margin-top: 25%;
+		width: 90%;
+		margin-left: -1%;
+		
+	}
+
 }
 
 
@@ -1041,5 +1048,7 @@ body.lb-disable-scrolling {
 		float: none;
 	}
 }
+
+
 
 
