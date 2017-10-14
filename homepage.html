@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Binary Stock	</title>
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="assets/css/fontAwesome.css">
+        <link rel="stylesheet" href="assets/css/hero-slider.css">
+        <link rel="stylesheet" href="assets/css/tooplate-style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    </head>
+
+<body>
+
+
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top">
+                        <div class="logo"></div>
+						<label class='logo-title'> Binary Stock </label>
+                    </a>
+                </div>
+                <!--/.navbar-header-->
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" class="scroll-link" data-id="portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.header-->
+
+
+
+	
+    <section class="cd-hero">
+        <ul class="cd-hero-slider autoplay">  
+            <li class="selected first-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+						<input type='text' class='search-field'  placeholder="Search here ... (Ex: ticket ) " list="test"	/ >
+						<datalist id="test">
+							<option value="Pen">Pen</option>
+							<option value="Pencil">Pencil</option>
+							<option value="Paper">Paper</option>
+						</datalist>
+										
+                        <div class="primary-button">
+                            <a href="searchResult.html" class="scroll-link" data-id="about">Search now</a>
+                        </div>						
+                    </div>                   
+                </div> <!-- .cd-full-width -->
+            </li>
+        </ul>
+	</section>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script>
+		//background animation
+		$(document).ready(function() {
+			var movementStrength = 25;
+			var height = movementStrength / $(window).height();
+			var width = movementStrength / $(window).width();
+			$("body").mousemove(function(e){
+					  var pageX = e.pageX - ($(window).width() / 2);
+					  var pageY = e.pageY - ($(window).height() / 2);
+					  var newvalueX = width * pageX * -1 - 35;
+					  var newvalueY = height * pageY * -1 - 30;
+					  $('.first-slide').css("background-position", newvalueX+"px     "+newvalueY+"px");
+			});
+		});
+	</script>
+	
+   
+</body>
+</html>
