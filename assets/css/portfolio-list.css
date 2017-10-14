@@ -1,0 +1,44 @@
+.list-section{
+	margin-left:20%;
+	margin-top:-5%;
+	width:100%;
+}
+.list-remove{
+	position:relative;
+	float:right;
+	margin-top:5%;
+	font-size:150%;
+	color:red;
+}
+.list-remove:hover{
+	cursor:pointer;
+	opacity:0.7;
+}
+
+
+.list-ul {
+  list-style-type: none;
+  width: 60%;
+}
+ 
+
+.list-li img {
+  float: left;
+  margin-top:2.5%;
+  margin-right:4%;
+}
+ 
+.list-li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+.list-li {
+  padding: 10px;
+  padding-left:10%;
+  padding-right:10%;
+  overflow: auto;
+}
+ 
+.list-li:hover {
+  background: #eee;
+}
