@@ -578,29 +578,31 @@ ul.cd-hero-slider {
 /* FUN FACTS */
 
 #fun-facts {
-	margin-top:2%;
+	margin-top:-4%;
 	padding: 100px 0px;
 
 	
 }
 
 #fun-facts .fact-item {
-	background-color: white;
-	padding: 30px;
+	
+	padding: 10px;
 	text-align: center;
 }
 
 .fact-item .counter {
 	font-size: 24px;
 	font-weight: 700;
+	border-bottom:1px solid gray;
+	padding:10%;
 	color: #a2cf8d;
+	text-transform: uppercase;
 }
 
 .fact-item span {
 	display: inline-block;
 	margin-top: 10px;
-	font-style: 13px;
-	text-transform: uppercase;
+	font-style: 10px;
 	letter-spacing: 0.5px;
 	color: #7a7a7a;
 }
