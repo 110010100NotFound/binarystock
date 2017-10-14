@@ -80,6 +80,8 @@ $(document).ready(function(){
             <label class='counter-value'>"+scoresList[0].toPrecision(4)+"</label>\
         </span>");
         $("#value-item").after(el);
+
+        $(".searchResult-icon").attr("src", data["logo"]);
     });
 
     var myChart = new Chart(ctx, {
