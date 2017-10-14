@@ -124,7 +124,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#addPortfolio-btn").on('click', function(){
+    $(".addPortfolio-btn").on('click', function(){
         try
         {
             var portfolio = JSON.parse(cookie.get("@binaryStock/Portfolio"));
