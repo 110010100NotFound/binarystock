@@ -1,8 +1,11 @@
+
 from bottle import run,get,post,request,response
-import urllib.request
+import requests
 import pandas as pd
 import json
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import scipy.optimize as sco
 
@@ -29,7 +32,7 @@ def portfolioOptimization():
 	firstTime=0
 
 	for ticker in tickers:
-		result=json.loads(urllib.request.urlopen("https://api.iextrading.com/1.0/stock/"+ticker+"/chart/1y").read())
+		result=requests.get("https://api.iextrading.com/1.0/stock/"+ticker+"/chart/1y").json()
 		everydayClose=[]
 		for everyday in result:
 			everydayClose.append(everyday["close"])
@@ -65,13 +68,11 @@ def portfolioOptimization():
 	bnds = tuple((0,1) for x in range(noa))
 	opts = sco.minimize(min_sharpe, noa*[1./noa,], method = 'SLSQP', bounds = bnds, constraints = cons)
 	
-	returnData={}
+	highestSharpeWeightRatio={}
 	for i in range(len(tickers)):
-		returnData[tickers[i]]={
-			"highestSharpeWeightRatio":opts.x[i]
-		}
+		highestSharpeWeightRatio[tickers[i]]=opts.x[i]
 
-	return (returnData)
+	return (highestSharpeWeightRatio)
 
 run (host='0.0.0.0',reloader=True,debug=True,port=80)
 
@@ -82,13 +83,9 @@ run (host='0.0.0.0',reloader=True,debug=True,port=80)
 	for ticker in portfolio:
 		result=json.loads(urllib.request.urlopen("https://api.iextrading.com/1.0/stock/"+ticker+"/chart/1y").read())
 		stockPerformance=[]
-
 		for everyday in result:
 			stockPerformance.append(everyday["close"])
-
 		returns=np.log(pd.DataFrame(stockPerformance)/pd.DataFrame(stockPerformance).shift(1))
-
 		#stockPerformanceArr=np.asarray(stockPerformance)
 		#portfolioPerformance.append(stockPerformanceArr.mean()*252)
-
 	return (json.dumps(portfolioPerformance))"""
