@@ -1,0 +1,204 @@
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@media (max-width: 640px) {
+.login-page {
+  width: 350px;
+  padding: 7% 0 0;
+  margin: auto;
+}
+}
+
+@media (max-width: 440px) {
+.login-page {
+  width: 320px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+}
+
+@media (min-width: 640px) {
+.login-page {
+  width: 400px;
+  padding: 7% 0 0;
+  margin: auto;
+}
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  background-color: #f4f2e7;
+  max-width: 250px;
+  border-radius:10px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input::-webkit-input-placeholder{
+  color: #b5b9c8;
+}
+
+.form input,select  {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #595959;
+  color:white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #2c2e36;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #42444d;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #199AFF;
+  color: #199AFF;
+  text-decoration: none;
+}
+
+.form .register-form {
+  display: none;
+}
+
+
+.form .test-form {
+  display: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: black;
+}
+
+.container .info span {
+  color: black;
+  font-size: 12px;
+}
+
+.container .info span a {
+  color: black;
+  text-decoration: none;
+}
+
+.container .info span .fa {
+  color: black;
+}
+
+
+body {
+  background: #76b852;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}	
+
+#loginBack{
+	width:1.6%;
+	position:absolute;
+	top:5%;
+	left:5%;
+	cursor:pointer;
+}
+
+#loginBack:hover{
+	opacity:0.7;
+}
+
+.logo{
+	display:block;width:90px;margin-bottom:14%;margin-top:5%;
+	
+}
+
+@media (max-width: 640px) {
+	.form{
+		margin-top:15%;
+	}
+	
+	#loginBack{
+	width:4%;
+	position:absolute;
+	top:5%;
+	left:5%;
+	cursor:pointer;
+	}
+
+	.logo{
+		display:block;width:220px;margin-bottom:20%;
+	}
+}
+
+@media (max-width: 440px) {
+		.logo{
+		display:block;width:290px;margin-bottom:5%;margin-left:-12%
+	}
+}
+
+
+body{	
+  background: url("../img/bg.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

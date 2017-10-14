@@ -1,8 +1,10 @@
 from bottle import run,get,post,request,response
-import urllib.request
+import requests
 import pandas as pd
 import json
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import scipy.optimize as sco
 
@@ -29,7 +31,7 @@ def portfolioOptimization():
 	firstTime=0
 
 	for ticker in tickers:
-		result=json.loads(urllib.request.urlopen("https://api.iextrading.com/1.0/stock/"+ticker+"/chart/1y").read())
+		result=requests.get("https://api.iextrading.com/1.0/stock/"+ticker+"/chart/1y").json()
 		everydayClose=[]
 		for everyday in result:
 			everydayClose.append(everyday["close"])

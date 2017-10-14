@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Binary Stock </title>
+	<link rel="stylesheet" href="assets/css/login.css"> 
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+<center>
+	<div class="login-page">
+		  <div class="form">
+				<form action ="" method = "post" class="register-form" onsubmit="return check()">					
+					  <div id="test">
+						  <label style='font-size:20px;'> Create Account </label>
+						  <br><br>
+						  <input type="text" placeholder="Username" name="username" required/>
+						  <input id="pass" type="password" placeholder="Password" name="password" required onkeyup="checkPass(); return false;"/>
+						  <input  id="confirmpass" type="password" placeholder="Confirm password" required  onkeyup="checkPass(); return false;"/>
+						  <input type="email" name="email" placeholder="Email address" required/>
+						  <button id='register' name="register">create</button>
+					  </div>
+					  <p class="message">Already registered? <a href="#">Sign In</a></p>
+				</form>
+			
+				
+				<form action ="" method = "post"  class="login-form">
+					   <center><img src = 'assets/img/logo_black_2.png' class='logo'> </center>
+						<!--  <h1 style='color:#76b852; border-color:grey;margin:3%;'> i-PreDi </h1> -->
+					  <input type="text" name="username" placeholder="username"  required/>
+					  <input type="password" name="password" placeholder="password"  required/>
+					  <a href='homepage.html'><button type='button' name="login">login</button></a>
+					  <p class="message">Not registered? <a href="#">Create an account</a></p>
+				</form>
+				
+			
+				
+		  </div>
+	</div>
+
+</body>
+<script type="text/javascript" src="assets/js/login.js"></script>
+
+
+</html>
+
+
+
+
+
