@@ -82,6 +82,9 @@ $(document).ready(function(){
         $("#value-item").after(el);
 
         $(".searchResult-icon").attr("src", data["logo"]);
+
+        $("#company-name").text(data.companyProfile["name"]);
+        $("#company-desc").text(data.companyProfile["description"]);
     });
 
     var myChart = new Chart(ctx, {

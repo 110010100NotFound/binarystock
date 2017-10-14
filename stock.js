@@ -307,55 +307,64 @@ function getAllAttribute(ticker){
 	var liquidityScores={};
 	var trendsScore={};
 	var profitabilityScores={};
+	var companyProfile={}
+	getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/company",function(result){
+		companyProfile["ticker"]=result.symbol;
+		companyProfile["name"]=result.companyName;
+		companyProfile["description"]=result.description;
+		companyProfile["sector"]=result.sector;
+		getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/financials",function(result){
+			profitabilityScores["roeScore"]=getROE(result);
+			liquidityScores["laScore"]=getLA(result);
+			growthScores["increaseRateOfRevenueScore"]=getIncreaseRateOfRevenue(result);
+			liquidityScores["cashFlowCoverageRatioScore"]=getCashFlowCoverageRatio(result)
+			//getProfitMargin(result);
+			//getCurrentRatio(result);
+			//getQuickRatio(result);
+			growthScores["netProfitGrowthScore"]=getNetProfitGrowth(result);
 
-	getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/financials",function(result){
-		profitabilityScores["roeScore"]=getROE(result);
-		liquidityScores["laScore"]=getLA(result);
-		growthScores["increaseRateOfRevenueScore"]=getIncreaseRateOfRevenue(result);
-		liquidityScores["cashFlowCoverageRatioScore"]=getCashFlowCoverageRatio(result)
-		//getProfitMargin(result);
-		//getCurrentRatio(result);
-		//getQuickRatio(result);
-		growthScores["netProfitGrowthScore"]=getNetProfitGrowth(result);
+			getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/stats",function(result){
+				profitabilityScores["roaScore"]=getROA(result);
+				trendsScore["shortInterestRatio"]=getShortRatio(result);
+				valueScores["pbScore"]=getPB(result);
 
-		getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/stats",function(result){
-			profitabilityScores["roaScore"]=getROA(result);
-			trendsScore["shortInterestRatio"]=getShortRatio(result);
-			valueScores["pbScore"]=getPB(result);
+				getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/earnings",function(result){
+					//getEPS(result);
+					growthScores["epsGrowthScore"]=getEpsGrowth(result);
 
-			getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/earnings",function(result){
-				//getEPS(result);
-				growthScores["epsGrowthScore"]=getEpsGrowth(result);
+					getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/quote",function(result){
+						valueScores["peScore"]=getPE(result);
+						data["valueScores"]=valueScores;
+						data["growthScores"]=growthScores;
+						data["liquidityScores"]=liquidityScores;
+						data["trendsScore"]=trendsScore;
+						data["profitabilityScores"]=profitabilityScores;
+						data["companyProfile"]=companyProfile;
+						calculateAttributeScore(data);
 
-				getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/quote",function(result){
-					valueScores["peScore"]=getPE(result);
-					data["valueScores"]=valueScores;
-					data["growthScores"]=growthScores;
-					data["liquidityScores"]=liquidityScores;
-					data["trendsScore"]=trendsScore;
-					data["profitabilityScores"]=profitabilityScores;
-					calculateAttributeScore(data);
-
-					getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/logo",function(result){
-						data["logo"]=result.url;
-						//console.log(data);
-						$(document).trigger("getAllAttributes",[data]);
+						getAjax("https://api.iextrading.com/1.0/stock/"+ticker+"/logo",function(result){
+							data["logo"]=result.url;
+							//console.log(data);
+							$(document).trigger("getAllAttributes",[data]);
+						},function(message){
+							console.error(message)
+						})
 					},function(message){
 						console.error(message)
-					})
-					
+					});
+
 				},function(message){
-					console.error(message)
+					console.log(message)
 				});
 
 			},function(message){
 				console.log(message)
 			});
-
 		},function(message){
 			console.log(message)
-		});
+		})	
 	},function(message){
 		console.log(message)
-	})	
+	})
+	
 }
