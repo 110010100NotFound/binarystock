@@ -1,11 +1,12 @@
 .list-section{
-	margin-left:20%;
+	margin-left:15%;
 	margin-top:-5%;
 	width:100%;
 }
 .list-remove{
 	position:relative;
 	float:right;
+	font-weight:700;
 	margin-top:5%;
 	font-size:150%;
 	color:red;
@@ -18,7 +19,7 @@
 
 .list-ul {
   list-style-type: none;
-  width: 60%;
+  width: 70%;
 }
  
 

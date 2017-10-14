@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+		<link href="assets/css/portfolio.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/fontAwesome.css">
         <link rel="stylesheet" href="assets/css/hero-slider-search.css">
         <link rel="stylesheet" href="assets/css/tooplate-style-search.css">
@@ -45,7 +46,7 @@
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="portfolio.html" class="scroll-link" data-id="portfolio">Build Portfolio</a></li>
+                        <li><a href="portfolio.html" class="scroll-link" data-id="portfolio">Remove Portfolio</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
@@ -60,9 +61,60 @@
 
 	<section>
 		<div class='header-line'> 
-			<label class='portfolio-list-title'>Portfolio List </label>
+			<label class='portfolio-list-title'>My Portfolio </label>
 		</div>
+		  <div class="panel-body text-center">
+			 <canvas id="canvas" height="300" width="400"></canvas>
+
+		  </div>
+		<div class='portfolio-info'>
+			<div class=" mtbox">
+				<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+					<div class="box1">
+						<span class="li_heart"></span>
+						<h3>10%</h3>
+						risk
+					</div>
+						<p>Your risk percentage is 10%</p>
+				</div>
+				<div class="col-md-2 col-sm-2 box0">
+					<div class="box1">
+						<span class="li_cloud"></span>
+						<h3>20%</h3>
+						apa
+					</div>
+						<p>48 New files were added in your cloud storage.</p>
+				</div>
+				<div class="col-md-2 col-sm-2 box0">
+					<div class="box1">
+						<span class="li_stack"></span>
+						<h3>30%</h3>
+						tak ada
+					</div>
+						<p>You have 23 unread messages in your inbox.</p>
+				</div>
+				<div class="col-md-2 col-sm-2 box0">
+					<div class="box1">
+						<span class="li_news"></span>
+						<h3>50%</h3>
+						apa takada 
+					</div>
+						<p>More than 10 news were added in your reader.</p>
+				</div>
+				<div class="col-md-2 col-sm-2 box0">
+					<div class="box1">
+						<span class="li_data"></span>
+						<h3>100%!</h3>
+						ok lah tak ada
+					</div>
+						<p>Your server is working perfectly. Relax & enjoy.</p>
+				</div>
+			</div>
+		</div>			
+		
+		
 		<div class='list-section'>
+		 <label class='portfolio-list-label'> Portfolio List </label>
 		  <ul class='list-ul'>
 			<li class='list-li'>
 			  <img src="assets/img/logo_black.png" />
@@ -102,8 +154,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="assets/js/bootstrap.min.js"></script>
-
-		
+	 <script src="assets/js/Chart.js"></script>
+	 <script src="assets/js/chartjs-conf-pie.js"></script>	
    
 </body>
 </html>
