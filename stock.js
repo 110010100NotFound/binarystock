@@ -247,8 +247,8 @@ function calculateAttributeScore(data){
 		}
 		scoreList[dataKey[b]]=currentAttributeScore/currentScore.length;
 	}
-	console.log("the score is "+totalValueScore);
-	console.log(scoreList)
+	scoreList["profitabilityScores"]=0;
+	data["scoreList"]=scoreList;
 }
 
 
@@ -282,7 +282,7 @@ function getAllAttribute(ticker){
 					data["valueScores"]=valueScores;
 					data["growthScores"]=growthScores;
 					data["liquidityScores"]=liquidityScores;
-					data["trendsScore"]=trendsScore
+					data["trendsScore"]=trendsScore;
 					calculateAttributeScore(data);
 					console.log(data);
 				},function(message){
