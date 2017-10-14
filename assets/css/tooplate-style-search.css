@@ -600,6 +600,7 @@ ul.cd-hero-slider {
 }
 
 .fact-item span {
+	float:left;
 	display: inline-block;
 	text-align:left;
 	margin-top: 10px;
