@@ -96,6 +96,8 @@ $(document).ready(function(){
         $("#company-desc").text(data.companyProfile["description"]);
 
         $(".loader").fadeOut();
+
+        companyProfile = data.companyProfile;
     });
 
     var myChart = new Chart(ctx, {
@@ -121,4 +123,25 @@ $(document).ready(function(){
         }
     });
 
+    $("#addPortfolio-btn").on('click', function(){
+        try
+        {
+            var portfolio = JSON.parse(cookie.get("@binaryStock/Portfolio"));
+            portfolio.unshift(companyProfile);
+            cookie.set("@binaryStock/Portfolio", 
+                JSON.stringify(portfolio));
+            window.location.href="/portfolioList.html";
+        }
+        catch(e)
+        {
+            var portfolio = [];
+            portfolio.unshift(companyProfile);
+            cookie.set("@binaryStock/Portfolio", 
+                JSON.stringify(portfolio));
+            window.location.href="/portfolioList.html";
+        }
+    });
+
 });
+
+var companyProfile = {};
