@@ -41,12 +41,6 @@
                     <a href="homepage.html" class="navbar-brand scroll-top">
                         <div class="logo"></div>
                     </a>
-					<div class='search-area'>
-						<input id="search-bar" type='text' class='search-field'  placeholder="Search here ... (Ex: ticket ) " list="search-data"	/ >
-						<datalist id="search-data">
-						</datalist>
-                        <a id="search-btn" href="searchResult.html" class="search-button scroll-link" data-id="about">Search</a>															
-					</div>
                 </div>
                 <!--/.navbar-header-->
                 <div id="main-nav" class="collapse navbar-collapse">
@@ -56,6 +50,15 @@
                 </div>
                 <!--/.navbar-collapse-->
             </nav>
+					<div class='search-area'>
+						<input id="search-bar" type='text' class='search-field'  placeholder="Search here ... (Ex: ticket ) " list="search-data"	/ >
+						<datalist id="search-data">
+							<option value="Pen">Pen</option>
+							<option value="Pencil">Pencil</option>
+							<option value="Paper">Paper</option>
+						</datalist>
+                        <a id="search-btn" href="searchResult.html" class="search-button scroll-link" data-id="about">Search</a>															
+					</div>
             <!--/.navbar-->
         </div>
         <!--/.container-->
@@ -74,9 +77,22 @@
 			<hr>
 			<p id="company-desc" class='description'></p>
 		</div>
+		<style scoped>
+			.chart-wrap {
+				position:relative;
+				width:50vw;
+			}
+			@media (max-width: 599px) {
+				.chart-wrap {
+					width:100vw;
+				}
+			}
+		</style>
 		<div class='pentagon-section'>
-            <!--<img src='assets/img/pentagon.png'/>-->
-            <canvas id="myChart" width="400" height="400"></canvas>
+			<!--<img src='assets/img/pentagon.png'/>-->
+			<div class='chart-wrap'>
+				<canvas id="myChart"></canvas>
+			</div>
 		</div>
 		
 		<div class='footer-line'>
@@ -112,8 +128,12 @@
 					<div class="col-sm-1"></div>						
 					</div>
 				</div>
-			</div>	
+				<center>
+					<a class='main-button-href'  href="portfolioList.html" > <button class='main-button-survey'>Add to portfolio </button> </a>
+				</center>				
+			</div>
 		</div>
+					
 	</section>
     </footer>
 	

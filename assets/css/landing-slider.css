@@ -1,5 +1,9 @@
 .air-slider{position:relative; margin: 0 auto;}.air-slider .slide{width:100%;height:100%;position:absolute;overflow:hidden;opacity:0;-webkit-transition:1s ease all;transition:1s ease all;background:#ccc}.air-slider .slide img{width:100%;height:100%}.air-slider .active-slide{opacity:1}.air-slider .controls{width:100%;height:50px;top:calc(50% - 25px);left:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;position:absolute}.air-slider .controls button{width:50px;height:50px;background:rgba(0,0,0,0.8);color:#fff;border:none;outline:none;cursor:pointer;font-weight:bold}
 
+img{
+	width:100%;
+	height:auto !important;
+}
 .air-slider{
 	width: 100%;
     max-width: 100% !important;
@@ -21,9 +25,29 @@ body{
 }
 
 .slider-btn{
-
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    display: table;
+    margin: auto;
 	position:absolute;
-	width:10%;
+	width:13%;
 	bottom:10%;
+	background:white;
+	color:#1e2227;
+	border:2px solid white;
+	cursor:pointer;
+	z-index:10000;
+	font-size:130%;
+	padding:0.7%;
+	font-weight:700;
+	border-radius:0;
+	color:rgpa(255,255,255,0);
+	
+}
+.slider-btn:hover{
+	color:white;
+	background:transparent !important;
+	border:1px solid white !important;
 }
 

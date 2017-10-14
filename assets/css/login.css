@@ -1,8 +1,10 @@
 
-
+body{
+	overflow:hidden;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 .login-page {
   width: 350px;
   padding: 7% 0 0;
@@ -29,14 +31,14 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
-  background-color: #f4f2e7;
+  background: transparent;
+  background-color: transparent;
   max-width: 250px;
   border-radius:10px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
 }
 
 .form input::-webkit-input-placeholder{
@@ -46,27 +48,28 @@
 .form input,select  {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #595959;
-  color:white;
+  background: transparent;
+  color:#FFFFFF;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  
+  border:1px solid white;
 }
 
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #2c2e36;
+  background: white;
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: #1e2227;
   font-size: 14px;
+  
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
@@ -75,7 +78,7 @@
 .form button:hover,
 .form button:active,
 .form button:focus {
-  background: #42444d;
+  opacity:0.7;
 }
 
 .form .message {
@@ -166,32 +169,21 @@ body {
 }
 
 .logo{
-	display:block;width:90px;margin-bottom:14%;margin-top:5%;
+	display:block;width:160px;margin-bottom:5%;margin-top:-5%;
 	
 }
 
-@media (max-width: 640px) {
+@media (max-width: 764px) {
 	.form{
-		margin-top:15%;
-	}
-	
-	#loginBack{
-	width:4%;
-	position:absolute;
-	top:5%;
-	left:5%;
-	cursor:pointer;
+		margin-top:5%;
+		margin-left:-2%;
 	}
 
 	.logo{
-		display:block;width:220px;margin-bottom:20%;
-	}
-}
+	display:block;width:160px;
 
-@media (max-width: 440px) {
-		.logo{
-		display:block;width:290px;margin-bottom:5%;margin-left:-12%
 	}
+
 }
 
 

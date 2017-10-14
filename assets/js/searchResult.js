@@ -108,6 +108,7 @@ $(document).ready(function(){
             }]
         },
         options:{
+            responsive:true,
             scale: {
                 display: true,
                 ticks: {

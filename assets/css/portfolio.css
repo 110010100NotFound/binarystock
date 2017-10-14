@@ -5,23 +5,27 @@
 
 /* BASIC THEME CONFIGURATION */
 
-
+.title-handle{
+	    left: 0;
+    text-align: center;
+    position: absolute;
+    right: 0;
+	
+}
 
 .panel-body {
 	margin-top:-5%;
 }
 
 .portfolio-list-label{
-	position: absolute;
+	position: relative;
     color: #2b3340;
-    bottom:-25%;
-    text-align: center;
+
     font-size: 170%;
-	margin: auto;
-    left: 0;
+
 	font-weight:600;
 	text-transform:uppercase;
-    right: 0;
+
 }
 .portfolio-info{
 	width:80%;
@@ -2251,4 +2255,19 @@ label {
     min-height: 900px;
 }
 
+
+
+@media (max-width: 768px){
+	.panel-body{
+		margin-left:-10%;
+	}
+	
+	.portfolio-list-title{
+		font-weight:600;
+	}
+	.portfolio-list-label{
+		position:relative;
+		margin-bottom:5%;
+	}
+}
 
