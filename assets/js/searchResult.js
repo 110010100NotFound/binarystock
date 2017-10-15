@@ -33,7 +33,7 @@ $(document).ready(function(){
         var el = Object.keys(data.growthScores).map(function(keys){
             return ("<span>\
                 <label class='counter-key'>"+data.growthScores[keys].name+" :</label>\
-                <label class='counter-value'>"+parseFloat(data.growthScores[keys].score).toPrecision(3)+"</label>\
+                <label class='counter-value'>"+parseFloat(data.growthScores[keys].data).toFixed(2)+"</label>\
             </span>");
         })
         el.unshift("<span>\
@@ -45,7 +45,7 @@ $(document).ready(function(){
         el = Object.keys(data.liquidityScores).map(function(keys){
             return ("<span>\
                 <label class='counter-key'>"+data.liquidityScores[keys].name+" :</label>\
-                <label class='counter-value'>"+parseFloat(data.liquidityScores[keys].score).toPrecision(3)+"</label>\
+                <label class='counter-value'>"+parseFloat(data.liquidityScores[keys].data).toFixed(2)+"</label>\
             </span>");
         })
         el.unshift("<span>\
@@ -57,7 +57,7 @@ $(document).ready(function(){
         el = Object.keys(data.profitabilityScores).map(function(keys){
             return ("<span>\
                 <label class='counter-key'>"+data.profitabilityScores[keys].name+" :</label>\
-                <label class='counter-value'>"+parseFloat(data.profitabilityScores[keys].score).toPrecision(3)+"</label>\
+                <label class='counter-value'>"+parseFloat(data.profitabilityScores[keys].data).toFixed(2)+"</label>\
             </span>");
         })
         el.unshift("<span>\
@@ -69,7 +69,7 @@ $(document).ready(function(){
         el = Object.keys(data.trendsScore).map(function(keys){
             return ("<span>\
                 <label class='counter-key'>"+data.trendsScore[keys].name+" :</label>\
-                <label class='counter-value'>"+parseFloat(data.trendsScore[keys].score).toPrecision(3)+"</label>\
+                <label class='counter-value'>"+parseFloat(data.trendsScore[keys].data).toFixed(2)+"</label>\
             </span>");
         })
         el.unshift("<span>\
@@ -81,7 +81,7 @@ $(document).ready(function(){
         el = Object.keys(data.valueScores).map(function(keys){
             return ("<span>\
                 <label class='counter-key'>"+data.valueScores[keys].name+" :</label>\
-                <label class='counter-value'>"+parseFloat(data.valueScores[keys].score).toPrecision(3)+"</label>\
+                <label class='counter-value'>"+parseFloat(data.valueScores[keys].data).toFixed(2)+"</label>\
             </span>");
         })
         el.unshift("<span>\
