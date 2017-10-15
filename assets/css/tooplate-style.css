@@ -740,6 +740,9 @@ body.lb-disable-scrolling {
 	footer ul {
 		float: none;
 	}
+	.navbar{
+		z-index:999;
+	}
 }
 
 
