@@ -28,10 +28,14 @@ Primary style
 	background:#2b3340;
 	color:white;
 }
-
+.loader-label{
+	font-size:150%;
+	padding-top:8%;
+}
 
 .loader{
-	display:none;
+	line-height: 100vh;
+    text-align: center;	 
 	position:fixed;
 	width:100vw;
 	height:100vh;
@@ -39,10 +43,11 @@ Primary style
 	left:0;
 	top:0;
 	z-index:99123918203912890;
-	opacity:0.5;
+	opacity:0.8;
 	
 }
 .loader img{
+	z-index: -1;
 	left:0;
 	right:0;
 	top:0;
