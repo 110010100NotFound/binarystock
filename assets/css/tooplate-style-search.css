@@ -209,7 +209,7 @@ p {
     padding: 80px 0;
 }
 .navbar-inverse .navbar-toggle {
-	margin-top: 22px;
+	margin-top: 10%;
     border-color: #a2cf8d;
     background-color: #a2cf8d;
 }
@@ -1053,7 +1053,16 @@ body.lb-disable-scrolling {
 	}
 	.fact-item {
 		margin-bottom: 15px;
+		
 	}
+	#fun-facts .fact-item{
+		margin-top:5%;
+	}
+	
+	.fact-item .counter{
+		padding-left:10%;
+	}
+	
 	.map {
 		margin-bottom: 45px;
 	}

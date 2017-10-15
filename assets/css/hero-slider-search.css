@@ -811,6 +811,11 @@ Javascript disabled
 
 
 @media (max-width: 768px){
+	.loader-label{
+	font-size:150%;
+	padding-top:25%;
+}
+	
 	.main-button-survey{
 		margin-top: 10%;
 		width: 90%;
@@ -820,7 +825,7 @@ Javascript disabled
 		width: 30%;	
 	}
 	.searchResult-icon{
-		    margin-top: 67%;
+		    margin-top: 60%;
 	}
 	.searchResult-title{
 		margin-top:25%;
