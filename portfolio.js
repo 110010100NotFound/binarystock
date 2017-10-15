@@ -11,11 +11,11 @@ function postAjax(url,data,onDone,onFail){
 
 function optimizePortfolio(stockList,amount,riskPreference){
 	var data={
-		"portfolio":stockList,
-		"riskPreference":riskPreference,
-		"amount":amount
+		portfolio:stockList,
+		riskPreference:parseInt(riskPreference),
+		amount:amount
 	}
-	postAjax("http://intuition.windworkshop.my/portfolioOptimization",data,function(result){
+	postAjax("http://localhost/portfolioOptimization",data,function(result){
 		//console.log(result);
 		$(document).trigger("optimizePortfolio",[data]);
 	},function(message){

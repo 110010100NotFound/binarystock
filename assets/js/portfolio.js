@@ -7,14 +7,6 @@ $(document).ready(function(){
     $("#search-bar").on("change",function(){
         $("#search-btn").attr("href", "/searchResult.html?ticker="+$("#search-bar").val());
     });
-
-    var query = querystring.parse();
-    if(typeof query["amount"] !== 'undefined' && typeof query["risk"] !== 'undefined'){
-        var tickers = portfolio.map(function(o){
-            return o.ticker;
-        });
-        optimizePortfolio(tickers, query["amount"], query["risk"]);
-    }
     
     try
     {
@@ -29,6 +21,15 @@ $(document).ready(function(){
             </li>");
         })
        $('#portfolio-list').append(el);
+
+       var query = querystring.parse();
+       if(typeof query["amount"] !== 'undefined' && typeof query["risk"] !== 'undefined'){
+           var tickers = portfolio.map(function(o){
+               return o.ticker;
+           });
+           //console.log(query);
+           optimizePortfolio(tickers, parseFloat(query["amount"]), parseInt(query["risk"]) );
+       }
     }
     catch(e)
     {

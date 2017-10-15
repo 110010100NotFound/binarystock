@@ -36,7 +36,7 @@ def portfolioOptimization():
 		amount=request.json.get("amount")
 		riskPreference=request.json.get("riskPreference")
 		risk_free=0.04
-
+		print(request.json)
 		noa=len(tickers)
 		dfData={};
 		index=[];
@@ -125,11 +125,11 @@ def portfolioOptimization():
 			blackrockResult=blackrockResult["resultMap"]["PORTFOLIOS"][0]["portfolios"][0]["returns"]["latestPerf"]
 			returnData["weightage"]=weight_list[port_returns.tolist().index(max(port_returns))].tolist()
 			returnData["investAmount"]=(weight_list[port_returns.tolist().index(max(port_returns))]*amount).tolist()
-
-		returnData["return"]=blackrockResult["oneYearAnnualized"]
-		returnData["risk"]=blackrockResult["oneYearRisk"]
-		returnData["sharpeRatio"]=blackrockResult["oneYearSharpeRatio"]
-
+		print (blackrockResult)
+		#returnData["return"]=blackrockResult["oneYearAnnualized"]
+		#returnData["risk"]=blackrockResult["oneYearRisk"]
+		#returnData["sharpeRatio"]=blackrockResult["oneYearSharpeRatio"]
+		returnData = blackrockResult;
 		lowestRisk={}
 		highestSharpe={}
 		highestReturn={}
