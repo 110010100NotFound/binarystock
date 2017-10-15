@@ -71,6 +71,7 @@ $(document).ready(function(){
         $('#risk-item').text( (data["risk"]*100).toFixed(2) +" %");
         $('#return-item').text( (data["return"]*100).toFixed(2) +" %");
         $('#sharpe-item').text( data["sharpeRatio"].toFixed(2));
+        $('.loader').fadeOut();
     });
 
 });
