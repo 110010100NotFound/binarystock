@@ -4,8 +4,27 @@
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 
 /* BASIC THEME CONFIGURATION */
+.listing-port{
 
+    width:100%;
+    margin-bottom: 3%;
+    margin-left:3%;
+}
 
+.right-side-port{
+	width:75%;margin-bottom: 5%;
+	
+	position:relative;
+	float:left;
+	 word-wrap: break-word;
+}
+
+.list-section{
+    margin-left:0 !important;
+}
+.chart-wrap{
+    margin:auto;
+}
 .title-handle{
 	    left: 0;
     text-align: center;

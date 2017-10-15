@@ -13,12 +13,16 @@ $(document).ready(function(){
         portfolio = JSON.parse(cookie.get("@binaryStock/Portfolio"));
         console.log(portfolio);
         var el = portfolio.map(function(o,i){
-            return("<li class='list-li'>\
-                <img src='"+o.logo+"' />\
-                <label onClick='removePortfolio("+i+")' class='list-remove'> X </label>\
-                <h3 class='listHead'>"+o.name+"</h3>\
-                <p>"+o.description+"</p>\
-            </li>");
+            return("<div class='listing'>\
+			<div class='left-side'>\
+				  <img src="+o.logo+" />\
+			</div>\
+			<div class='right-side'>\
+				  <label onClick='removePortfolio("+i+")' class='list-remove'> X </label>\
+				  <h3 class='listHead'>"+o.name+"</h3>\
+				  <p>"+o.description+"</p>\
+			</div>\
+		  </div>");
         })
        $('#portfolio-list').append(el);
     }

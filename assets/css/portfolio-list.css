@@ -1,15 +1,18 @@
 /*popup form */
 .listing{
-	width:100%:
+	width:100%;
+	margin-bottom: 3%;
 }
 .left-side{
 	width:20%;
 	position:relative;
 	float:left;
 	 word-wrap: break-word;
+	 text-align: center;	
+	 margin-bottom: 5%;
 }
 .right-side{
-	width:50%;
+	width:50%;margin-bottom: 5%;
 	margin-right:20%;
 	position:relative;
 	float:left;
