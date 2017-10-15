@@ -1,4 +1,21 @@
 /*popup form */
+.listing{
+	width:100%:
+}
+.left-side{
+	width:20%;
+	position:relative;
+	float:left;
+	 word-wrap: break-word;
+}
+.right-side{
+	width:50%;
+	margin-right:20%;
+	position:relative;
+	float:left;
+	 word-wrap: break-word;
+}
+
 .survey-question{
 	width:100%;
 	margin-top:5%;
@@ -15,6 +32,7 @@
 	float:left;
 	width:75%;
 	margin-bottom:10%;
+	
 }
 
 .num{
@@ -155,7 +173,7 @@ h3{
 
 .list-ul {
   list-style-type: none;
-  width: 70%;
+  width: 100%;
 }
  
 
@@ -201,5 +219,15 @@ h3{
 		padding-top:20%;
 		top:0;
 	}
+	.right-side{
+		width:70%;
+		padding-left:5%;
+		margin-right:0;
+	}
+	.left-side{
+		padding-left:5%;
+	}
+	
+	
 	
 }

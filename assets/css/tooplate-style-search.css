@@ -597,10 +597,11 @@ ul.cd-hero-slider {
 }
 
 .fact-item .counter {
-	font-size: 24px;
+	font-size: 150%;
 	font-weight: 700;
 	border-bottom:1px solid gray;
 	padding:10%;
+	padding-left:0%;
 	color: #a2cf8d;
 	text-transform: uppercase;
 }
