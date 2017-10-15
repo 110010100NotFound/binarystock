@@ -198,7 +198,7 @@ function getNetProfitGrowth(result){
 	netProfitGrowthScore=netProfitGrowthScore.toFixed(2)
 	returnNetProfitGrowth={
 		score:netProfitGrowthScore,
-		data:netProfitGrowth
+		data:netProfitGrowth,
 		name:"Net Profit Growth Rate"
 	}
 	return (returnNetProfitGrowth)
