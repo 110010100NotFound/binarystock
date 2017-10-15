@@ -20,5 +20,7 @@ function optimizePortfolio(stockList,amount,riskPreference){
 		$(document).trigger("optimizePortfolio",[result]);
 	},function(message){
 		console.error(message);
+		$(".loader-label").text("Failed to Optimise Portfolio.");
+		$(".loader-label").css("color","#ff6961");
 	});
 }
