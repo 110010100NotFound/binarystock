@@ -70,50 +70,46 @@
 			<label class='portfolio-list-title'>My Portfolio </label>
 		</div>
 		  <div class="panel-body text-center">
-			 <canvas id="canvas" height="300" width="400"></canvas>
-
+			<style scoped>
+				.chart-wrap {
+					position:relative;
+					width:50vw;
+				}
+				@media (max-width: 599px) {
+					.chart-wrap {
+						width:100vw;
+					}
+				}
+			</style>
+			<div class='chart-wrap'>
+				<canvas id="myChart"></canvas>
+			</div>
 		  </div>
 		<div class='portfolio-info'>
 			<div class=" mtbox">
 				<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
 					<div class="box1">
 						<span class="li_heart"></span>
-						<h3>10%</h3>
-						risk
+						<h3 id='risk-item'>0%</h3>
+						Risk
 					</div>
-						<p>Your risk percentage is 10%</p>
+						<p>One year annualized risk</p>
 				</div>
 				<div class="col-md-2 col-sm-2 box0">
 					<div class="box1">
 						<span class="li_cloud"></span>
-						<h3>20%</h3>
-						apa
+						<h3 id='return-item'>0%</h3>
+						Return Rate
 					</div>
-						<p>48 New files were added in your cloud storage.</p>
+						<p>Calculated based on daily log return</p>
 				</div>
 				<div class="col-md-2 col-sm-2 box0">
 					<div class="box1">
 						<span class="li_stack"></span>
-						<h3>30%</h3>
-						tak ada
+						<h3 id='sharpe-item'>0</h3>
+						Sharpe Ratio
 					</div>
-						<p>You have 23 unread messages in your inbox.</p>
-				</div>
-				<div class="col-md-2 col-sm-2 box0">
-					<div class="box1">
-						<span class="li_news"></span>
-						<h3>50%</h3>
-						apa takada 
-					</div>
-						<p>More than 10 news were added in your reader.</p>
-				</div>
-				<div class="col-md-2 col-sm-2 box0">
-					<div class="box1">
-						<span class="li_data"></span>
-						<h3>100%!</h3>
-						ok lah tak ada
-					</div>
-						<p>Your server is working perfectly. Relax & enjoy.</p>
+						<p>How many percent of return you can get by adding 1% of risk</p>
 				</div>
 			</div>
 		</div>			
@@ -133,9 +129,7 @@
 	
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="assets/js/bootstrap.min.js"></script>
-	 <script src="assets/js/Chart.js"></script>
-	 <script src="assets/js/chartjs-conf-pie.js"></script>	
+    <script src="assets/js/bootstrap.min.js"></script>	
    
 </body>
 </html>
