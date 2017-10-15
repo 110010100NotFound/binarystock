@@ -65,7 +65,7 @@ $(document).ready(function(){
         var labels = portfolio.map(function(o,i){
             colors.push(getRandomColor());
             data.investAmount[i] = data.investAmount[i].toFixed(2);
-            return o.name+"\n"+(data.weightage[i]*100).toPrecision(2)+"%";
+            return o.name+"\n"+(data.weightage[i]*100).toFixed(2)+"%";
         });
         myChart.data.datasets[0].data = data.investAmount;
         myChart.data.datasets[0].backgroundColor = colors;
